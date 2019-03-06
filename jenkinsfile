@@ -1,9 +1,18 @@
 pipeline {
 	agent any
 	stages {
-		stage("Checkout") {
+		stage("First stage") {
 			steps {
-				git url: 'https://github.com/GeorgesNgandeu/jenkins-docker.git'
+				echo 'This is step 1 of stage 1'
+				echo 'This is step 2 of stage 1'
+				echo 'This is step 3 of stage 1'
+			}
+		}
+		stage("Second stage") {
+			steps {
+				echo 'This is step 1 of stage 2'
+				echo 'This is step 2 of stage 2'
+				echo 'This is step 3 of stage 2'
 			}
 		}	
 	}
