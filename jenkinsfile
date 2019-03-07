@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage("Checkout") {
             steps {
-             git url: 'https://github.com/GeorgesNgandeu/jenkins-docker.git'
+             echo 'Get the code from Jenkinsfile'
             }
         }
         stage("Compile") {
