@@ -1,17 +1,17 @@
 pipeline {
     agent any
     stages {
-        stage("First stage") {
+        stage("Checkout") {
             steps {
-             echo 'Get the code from Jenkinsfile'
+             git url: 'https://github.com/GeorgesNgandeu/jenkins-docker.git'
             }
         }
-        stage("Second stage") {
+        stage("Compile stage") {
             steps {
-             echo 'Compile stage when setup'
+             sh "./gradlew compileJava"
             }
         }
-        stage("Third stage") {
+        stage("Test stage") {
             steps {
                 echo 'Test stage when setup'
             }
