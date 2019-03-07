@@ -1,17 +1,17 @@
 pipeline {
     agent any
     stages {
-        stage("Checkout") {
+        stage("First stage") {
             steps {
              echo 'Get the code from Jenkinsfile'
             }
         }
-        stage("Compile") {
+        stage("Second stage") {
             steps {
              echo 'Compile stage when setup'
             }
         }
-        stage("Unit test") {
+        stage("Third stage") {
             steps {
                 echo 'Test stage when setup'
             }
