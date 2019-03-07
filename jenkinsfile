@@ -1,19 +1,20 @@
 pipeline {
-	agent any
-	stages {
-		stage("First stage") {
-			steps {
-				echo 'This is step 1 of stage 1'
-				echo 'This is step 2 of stage 1'
-				echo 'This is step 3 of stage 1'
-			}
-		}
-		stage("Second stage") {
-			steps {
-				echo 'This is step 1 of stage 2'
-				echo 'This is step 2 of stage 2'
-				echo 'This is step 3 of stage 2'
-			}
-		}	
-	}
+    agent any
+    stages {
+        stage("Checkout") {
+            steps {
+             git url: 'https://github.com/GeorgesNgandeu/jenkins-docker.git'
+            }
+        }
+        stage("Compile") {
+            steps {
+             echo 'Compile stage when setup'
+            }
+        }
+        stage("Unit test") {
+            steps {
+                echo 'Test stage when setup'
+            }
+        }
+    }
 }
