@@ -6,9 +6,14 @@ pipeline {
              sh "./gradlew compileJava"
             }
         }
-        stage("Test stage") {
+        stage("Test stage 1") {
             steps {
                 echo 'Test stage when setup'
+            }
+        }
+        stage("Test stage 2") {
+            steps {
+                echo 'New Test stage when setup'
             }
         }
     }
